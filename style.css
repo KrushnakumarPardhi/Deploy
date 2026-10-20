@@ -1,0 +1,148 @@
+/* 1. Universal Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* 2. Colorfull Dynamic Gradient Background */
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* बॅकग्राउंडचे रंग हळूहळू बदलण्यासाठी ॲनिमेशन */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 3. Glassmorphism Card (पारदर्शक आणि ग्लोइंग कार्ड) */
+.todo-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 420px;
+  backdrop-filter: blur(10px);
+}
+
+/* 4. Gradient Title */
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(to right, #e73c7e, #23a6d5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+/* 5. Input Section */
+.input-section {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #23a6d5;
+  box-shadow: 0 0 12px rgba(35, 166, 213, 0.4);
+}
+
+/* 6. Vibrant Add Button */
+button {
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(56, 239, 125, 0.4);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(56, 239, 125, 0.6);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* 7. Task List Styling */
+ul {
+  list-style-type: none;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+li {
+  background: #ffffff;
+  padding: 14px 16px;
+  border-left: 5px solid #23a6d5; /* निळा रंगीत काठ */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 8. Completed Task Effect */
+li.completed {
+  text-decoration: line-through;
+  color: #a0aec0;
+  background: #f7fafc;
+  border-left: 5px solid #a0aec0;
+  opacity: 0.7;
+}
+
+/* 9. Glowing Delete Button */
+.delete-btn {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(255, 65, 108, 0.3);
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 5px 15px rgba(255, 65, 108, 0.5);
+}
